@@ -23,3 +23,5 @@ permalink: /blog/
 Nothing published yet. We're writing. Check back.
 
 {% endif %}
+
+Go back [home]({{ '/' | relative_url }}).
