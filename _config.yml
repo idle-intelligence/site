@@ -1,0 +1,20 @@
+title: Idle Intelligence
+tagline: "This whole thing runs on spare cycles and insomnia."
+description: >-
+  Idle Intelligence is an independent research lab exploring language computing,
+  distributed inference, and the emerging properties of networked cognition.
+  We believe the next era of AI doesn't live in data centers — it lives in
+  your browser tabs.
+url: "https://idleintelligence.org"
+baseurl: ""
+
+plugins:
+  - jekyll-seo-tag
+
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
