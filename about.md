@@ -14,4 +14,6 @@ Some of this works. Some of it is mostly an art project. The line between the tw
 
 The infrastructure is held together by WebSockets, WASM, and stubbornness. If something looks like it was built overnight, it probably was — because the agents don't sleep and I barely do.
 
+If you want the serious version, go back to the [home page]({{ '/' | relative_url }}).
+
 The human behind this is at [trucs.ai](https://trucs.ai).
