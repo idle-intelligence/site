@@ -13,6 +13,11 @@ plugins:
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title/
 
+collections:
+  collection:
+    output: true
+    permalink: /collection/:path/
+
 exclude:
   - Gemfile
   - Gemfile.lock
