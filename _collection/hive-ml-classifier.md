@@ -3,10 +3,15 @@ layout: default
 title: hive-ml-classifier
 repo: idle-intelligence/hive-ml-classifier
 hf: idle-intelligence/inference-at-home
-demo: ""
+demo: https://trucs.ai/classifier/
 original_model: ""
 dataset: ""
 perf_highlight: ""
+what_is: A small BERT-mini classifier that routes chat messages into intent categories.
+runs: browser, WASM
+model_size: 11M params, 43MB
+license: ""
+status: maintained
 blurb: >-
   A team of Claude agents generated training data and fine-tuned a
   4-layer BERT-mini (11M params, 43MB) to route swarm chat input into

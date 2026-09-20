@@ -11,15 +11,19 @@ permalink: /collection/
 {% for item in site.collection %}
 <p class="section-label">{{ item.title }}</p>
 
+{% if item.what_is and item.what_is != "" %}<p class="lead">{{ item.what_is }}</p>{% endif %}
+
 {{ item.blurb }}
 
 <ul>
-  {% if item.repo and item.repo != "" %}<li>Repo: <a href="https://github.com/{{ item.repo }}">{{ item.repo }}</a></li>{% endif %}
-  {% if item.hf and item.hf != "" %}<li>HuggingFace: <a href="https://huggingface.co/{{ item.hf }}">{{ item.hf }}</a></li>{% endif %}
+  {% if item.runs and item.runs != "" %}<li>Runs: {{ item.runs }}</li>{% endif %}
+  {% if item.original_model and item.original_model != "" %}<li>Model: {{ item.original_model }}{% if item.model_size and item.model_size != "" %}, {{ item.model_size }}{% endif %}{% if item.license and item.license != "" %}, {{ item.license }}{% endif %}</li>{% endif %}
   {% if item.demo and item.demo != "" %}<li>Demo: <a href="{{ item.demo }}">{{ item.demo }}</a></li>{% endif %}
-  {% if item.original_model and item.original_model != "" %}<li>Original model: {{ item.original_model }}</li>{% endif %}
+  {% if item.repo and item.repo != "" %}<li>Source: <a href="https://github.com/{{ item.repo }}">{{ item.repo }}</a></li>{% endif %}
+  {% if item.hf and item.hf != "" %}<li>HuggingFace: <a href="https://huggingface.co/{{ item.hf }}">{{ item.hf }}</a></li>{% endif %}
   {% if item.dataset and item.dataset != "" %}<li>Dataset: <a href="https://huggingface.co/datasets/{{ item.dataset }}">{{ item.dataset }}</a></li>{% endif %}
   {% if item.perf_highlight and item.perf_highlight != "" %}<li>Perf: {{ item.perf_highlight }}</li>{% endif %}
+  {% if item.status and item.status != "" %}<li>Status: {{ item.status }}</li>{% endif %}
 </ul>
 
 <hr>

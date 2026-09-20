@@ -7,6 +7,11 @@ demo: ""
 original_model: snakers4/silero-vad
 dataset: ""
 perf_highlight: ""
+what_is: Detects the start and stop of speech in an audio stream using a small neural model.
+runs: native
+model_size: 1.2MB
+license: MIT
+status: maintained
 blurb: >-
   Silero VAD v5 inference in Rust via candle (CPU tensor ops). Accepts
   24kHz PCM, resamples to 16kHz, and emits SpeechStart/SpeechEnd events

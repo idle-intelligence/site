@@ -3,10 +3,14 @@ layout: default
 title: ridgeline
 repo: idle-intelligence/ridgeline
 hf: ""
-demo: https://idle-intelligence.github.io/ridgeline/web/
+demo: https://trucs.ai/astres/
 original_model: ""
 dataset: idle-intelligence/ridgeline-terrain
 perf_highlight: ""
+what_is: A 3D globe visualizer that renders planetary terrain as stacked ridgeline plots.
+runs: browser, WASM, WebGPU
+license: MIT
+status: maintained
 blurb: >-
   3D WebGPU explorer of the solar system's solid worlds, each rendered as
   a globe of stacked Joy Division "Unknown Pleasures" latitude ridgelines

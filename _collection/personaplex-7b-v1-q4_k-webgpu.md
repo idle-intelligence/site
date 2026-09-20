@@ -7,6 +7,11 @@ demo: ""
 original_model: nvidia/personaplex-7b-v1
 dataset: ""
 perf_highlight: ""
+what_is: An unofficial quantization of a large speech-to-speech model for browser deployment.
+runs: WebGPU
+model_size: 8.37B params, 4.4GB (Q4_K)
+license: NVIDIA Open Model License
+status: experiment
 blurb: >-
   Unofficial Q4_K quantization of the full 32-layer NVIDIA
   PersonaPlex-7B-v1 (8.37B params, full-duplex speech-to-speech), shrunk
