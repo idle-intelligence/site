@@ -6,7 +6,7 @@ hf: idle-intelligence/inference-at-home
 demo: ""
 original_model: ""
 dataset: ""
-perf_highlight: "~2-10ms per classification (WASM, no GPU) — CLAUDE.md"
+perf_highlight: ""
 blurb: >-
   A team of Claude agents generated training data and fine-tuned a
   4-layer BERT-mini (11M params, 43MB) to route swarm chat input into
