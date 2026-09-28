@@ -213,6 +213,10 @@
       gap: 16px;
     }
 
+    .cat-grid:has(> .cat-card:only-child) {
+      grid-template-columns: minmax(280px, 360px);
+    }
+
     a.cat-card {
       display: flex;
       flex-direction: column;
