@@ -14,29 +14,29 @@
   {% assign items = site.collection | where: "task_group", g %}
   {% if items.size > 0 %}
 <p class="group-label">{{ g }} <span class="group-count">({{ items.size }})</span></p>
-<div class="catalogue-wrap">
-<table class="catalogue">
-<colgroup>
-  <col class="cat-kind"><col class="cat-name"><col class="cat-size"><col class="cat-runs"><col class="cat-links">
-</colgroup>
-<tbody>
+<div class="cat-grid-wrap">
+<div class="cat-grid">
 {% for item in items %}
-  <tr>
-    <td class="cat-kind">{{ item.kind }}</td>
-    <td class="cat-name"><a href="{{ item.url | relative_url }}">{{ item.title }}</a></td>
-    <td class="cat-size">{% if item.model_size and item.model_size != "" %}{{ item.model_size }}{% endif %}</td>
-    <td class="cat-runs">{% if item.runs and item.runs != "" %}{{ item.runs }}{% endif %}</td>
-    <td class="cat-links">
-      {% if item.demo and item.demo != "" %}<a href="{{ item.demo }}">demo</a>{% endif %}
-      {% if item.demo_pages and item.demo_pages != "" %}<a href="{{ item.demo_pages }}">pages</a>{% endif %}
-      {% if item.repo and item.repo != "" %}<a href="https://github.com/{{ item.repo }}">source</a>{% endif %}
-      {% if item.hf and item.hf != "" %}<a href="https://huggingface.co/{{ item.hf }}">hf</a>{% endif %}
-      {% if item.dataset and item.dataset != "" %}<a href="https://huggingface.co/datasets/{{ item.dataset }}">hf</a>{% endif %}
-    </td>
-  </tr>
+  {% if item.what_is and item.what_is != "" %}
+    {% assign desc = item.what_is %}
+  {% else %}
+    {% assign sentences = item.blurb | split: ". " %}
+    {% assign desc = sentences[0] | strip | append: "." | replace: "..", "." %}
+  {% endif %}
+  {% assign facts = "" %}
+  {% if item.model_size and item.model_size != "" %}{% assign facts = item.model_size %}{% endif %}
+  {% if item.runs and item.runs != "" %}
+    {% if facts != "" %}{% assign facts = facts | append: " &middot; " %}{% endif %}
+    {% assign facts = facts | append: item.runs %}
+  {% endif %}
+  <a class="cat-card" href="{{ item.url | relative_url }}">
+    <span class="cat-card-kind">{{ item.kind }}</span>
+    <h3 class="cat-card-title">{{ item.title }}</h3>
+    <p class="cat-card-desc">{{ desc }}</p>
+    {% if facts != "" %}<p class="cat-card-facts">{{ facts }}</p>{% endif %}
+  </a>
 {% endfor %}
-</tbody>
-</table>
+</div>
 </div>
   {% endif %}
 {% endfor %}
