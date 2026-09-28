@@ -8,6 +8,8 @@ hf: idle-intelligence/pocket-tts-gguf
 demo: "https://trucs.ai/tts/"
 demo_pages: "https://idle-intelligence.github.io/tts-web/web/"
 original_model: kyutai/pocket-tts-without-voice-cloning
+original_author: Kyutai
+contribution: Q8_0 GGUF quantization for the browser by Idle Intelligence.
 dataset: ""
 perf_highlight: ""
 what_is: The GGUF Q8_0 weights tts-web's Pocket TTS engine actually loads in the browser.

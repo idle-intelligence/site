@@ -8,6 +8,8 @@ hf: idle-intelligence/t0-beta-q8_0-webgpu
 demo: ""
 demo_pages: "https://idle-intelligence.github.io/t0-web/web/"
 original_model: theforecastingcompany/t0-beta
+original_author: The Forecasting Company
+contribution: Q8_0 quantization for WebGPU by Idle Intelligence.
 dataset: ""
 perf_highlight: ""
 what_is: Q8_0-quantized weights for t0-beta, packaged for browser WebGPU forecasting.

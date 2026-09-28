@@ -8,6 +8,8 @@ hf: idle-intelligence/llm-of-life-lora
 demo: ""
 demo_pages: "https://idle-intelligence.github.io/llm-life/web/"
 original_model: Qwen/Qwen2.5-0.5B-Instruct
+original_author: Qwen
+contribution: LoRA adapters trained by Idle Intelligence.
 dataset: ""
 perf_highlight: ""
 what_is: LoRA adapters that turn Qwen2.5-0.5B-Instruct into a Game of Life update rule.

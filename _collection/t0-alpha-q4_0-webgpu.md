@@ -8,6 +8,8 @@ hf: idle-intelligence/t0-alpha-q4_0-webgpu
 demo: "https://trucs.ai/t0/"
 demo_pages: "https://idle-intelligence.github.io/t0-web/web/"
 original_model: theforecastingcompany/t0-alpha
+original_author: The Forecasting Company
+contribution: Q4_0 quantization for WebGPU by Idle Intelligence.
 dataset: ""
 perf_highlight: "GIFT-Eval 97 configs, normalized to Seasonal Naive: MASE 0.7334, CRPS 0.4973"
 what_is: Q4_0-quantized weights for t0-alpha, packaged for browser WebGPU forecasting.

@@ -8,6 +8,8 @@ hf: idle-intelligence/personaplex-24L-q4_k-webgpu
 demo: "https://trucs.ai/sts/"
 demo_pages: "https://idle-intelligence.github.io/sts-web/web/"
 original_model: nvidia/personaplex-7b-v1
+original_author: NVIDIA
+contribution: Pruned, QLoRA-recovered, Q4_K quantization for WebGPU by Idle Intelligence.
 dataset: ""
 perf_highlight: ""
 what_is: The pruned, QLoRA-recovered, Q4_K-quantized PersonaPlex-7B that sts-web's live demo actually loads.

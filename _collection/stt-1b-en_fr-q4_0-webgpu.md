@@ -8,6 +8,8 @@ hf: idle-intelligence/stt-1b-en_fr-q4_0-webgpu
 demo: "https://trucs.ai/stt/"
 demo_pages: "https://idle-intelligence.github.io/stt-web/web/"
 original_model: kyutai/stt-1b-en_fr
+original_author: Kyutai
+contribution: Q4_0 quantization for WebGPU by Idle Intelligence.
 dataset: ""
 perf_highlight: ""
 what_is: Q4-quantized weights for a ~1B-parameter streaming speech-to-text transformer, packaged for the browser.

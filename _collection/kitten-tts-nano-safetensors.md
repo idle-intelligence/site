@@ -8,6 +8,8 @@ hf: idle-intelligence/kitten-tts-nano-safetensors
 demo: "https://trucs.ai/tts/"
 demo_pages: "https://idle-intelligence.github.io/tts-web/web/"
 original_model: KittenML/kitten-tts-nano-0.8
+original_author: KittenML
+contribution: Safetensors conversion for candle inference by Idle Intelligence.
 dataset: ""
 perf_highlight: ""
 what_is: Voice weights for a small text-to-speech model, converted to a Rust-friendly format.

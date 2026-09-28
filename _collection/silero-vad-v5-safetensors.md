@@ -8,6 +8,8 @@ hf: idle-intelligence/silero-vad-v5-safetensors
 demo: ""
 demo_pages: ""
 original_model: snakers4/silero-vad
+original_author: Silero Team
+contribution: Safetensors conversion for candle inference by Idle Intelligence.
 dataset: ""
 perf_highlight: ""
 what_is: Silero VAD v5 weights, converted from ONNX to safetensors for candle inference.

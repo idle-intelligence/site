@@ -8,6 +8,8 @@ hf: idle-intelligence/pocket-tts-int8
 demo: ""
 demo_pages: ""
 original_model: kyutai/pocket-tts-without-voice-cloning
+original_author: Kyutai
+contribution: Channel-wise INT8 quantization by Idle Intelligence.
 dataset: ""
 perf_highlight: ""
 what_is: An INT8-quantized version of a lightweight autoregressive text-to-speech model.

@@ -8,6 +8,8 @@ hf: idle-intelligence/stencil-life
 demo: ""
 demo_pages: "https://idle-intelligence.github.io/llm-life/web/"
 original_model: ""
+original_author: ""
+contribution: Trained from scratch by Idle Intelligence.
 dataset: ""
 perf_highlight: ""
 what_is: The smallest from-scratch networks trained to reproduce Conway's Game of Life exactly.

@@ -9,6 +9,8 @@ dataset: idle-intelligence/metar-stations
 demo: ""
 demo_pages: ""
 original_model: ""
+original_author: ""
+contribution: Built by Idle Intelligence from the Iowa Environmental Mesonet ASOS/AWOS network.
 perf_highlight: ""
 what_is: A worldwide roster of METAR/ASOS weather stations, sourced from the Iowa Environmental Mesonet.
 runs: ""

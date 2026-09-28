@@ -8,6 +8,9 @@ hf: idle-intelligence/inference-at-home
 demo: "https://trucs.ai/classifier/"
 demo_pages: ""
 original_model: ""
+original_author: ""
+contribution: Trained by Idle Intelligence.
+base_note: bert-mini architecture, base checkpoint not recorded
 dataset: ""
 perf_highlight: ""
 what_is: The trained weights behind hive-ml-classifier's swarm-intent BERT.

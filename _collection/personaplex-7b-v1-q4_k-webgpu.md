@@ -8,6 +8,8 @@ hf: idle-intelligence/personaplex-7b-v1-q4_k-webgpu
 demo: ""
 demo_pages: ""
 original_model: nvidia/personaplex-7b-v1
+original_author: NVIDIA
+contribution: Q4_K quantization for WebGPU by Idle Intelligence.
 dataset: ""
 perf_highlight: ""
 what_is: An unofficial quantization of a large speech-to-speech model for browser deployment.
