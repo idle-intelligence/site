@@ -1,0 +1,33 @@
+{% assign n_models = 0 %}
+{% assign n_datasets = 0 %}
+{% assign n_repos = 0 %}
+{% for item in site.collection %}
+  {% if item.kind == "model" %}{% assign n_models = n_models | plus: 1 %}{% endif %}
+  {% if item.kind == "dataset" %}{% assign n_datasets = n_datasets | plus: 1 %}{% endif %}
+  {% if item.kind == "code" %}{% assign n_repos = n_repos | plus: 1 %}{% endif %}
+{% endfor %}
+
+<p class="counts">{{ n_repos }} projects &middot; {{ n_models }} models &middot; {{ n_datasets }} datasets</p>
+
+{% assign task_groups = "Speech-to-text,Text-to-speech,Speech-to-speech,Audio codec and VAD,LLM and tool calling,Forecasting,Cellular automata,Text classification,Terrain and visualization,Weather,Sensor and privacy research,Benchmarking" | split: "," %}
+{% for g in task_groups %}
+  {% assign projects = site.collection | where: "task_group", g | where: "kind", "code" %}
+  {% for project in projects %}
+    {% assign owned = site.collection | where: "repo", project.repo %}
+    {% assign owned_assets = owned | where_exp: "o", "o.kind == 'model' or o.kind == 'dataset'" %}
+<div class="cat-list">
+    <a class="cat-card" href="{{ project.url | relative_url }}">
+      <span class="cat-card-kind">{{ project.kind }}</span>
+      <h3 class="cat-card-title">{{ project.title }}</h3>
+      <p class="cat-card-desc">{{ project.what_is }}</p>
+    </a>
+    {% if owned_assets.size > 0 %}
+    <div class="cat-list-nested">
+    {% for a in owned_assets %}
+      {% include asset-card.html item=a %}
+    {% endfor %}
+    </div>
+    {% endif %}
+</div>
+  {% endfor %}
+{% endfor %}
