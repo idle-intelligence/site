@@ -1,0 +1,11 @@
+{% assign a_item = include.item %}
+<a class="cat-card-mini" href="{{ a_item.url | relative_url }}">
+  <span class="cat-card-kind">{{ a_item.kind }}</span>
+  {% if a_item.original_model and a_item.original_model != "" %}
+    <h3 class="cat-card-title">{{ a_item.original_model }}{% if a_item.original_author and a_item.original_author != "" %}, by {{ a_item.original_author }}{% endif %}</h3>
+  {% else %}
+    <h3 class="cat-card-title">{{ a_item.title }}</h3>
+  {% endif %}
+  <p class="cat-card-desc">{{ a_item.contribution }}</p>
+  {% if a_item.license and a_item.license != "" %}<p class="cat-card-facts">{{ a_item.license }}</p>{% endif %}
+</a>
