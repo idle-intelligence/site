@@ -7,36 +7,33 @@
   {% if item.kind == "code" %}{% assign n_repos = n_repos | plus: 1 %}{% endif %}
 {% endfor %}
 
-<p class="counts">{{ n_models }} models &middot; {{ n_datasets }} datasets &middot; {{ n_repos }} repos</p>
+<p class="counts">{{ n_repos }} projects &middot; {{ n_models }} models &middot; {{ n_datasets }} datasets</p>
 
 {% assign task_groups = "Speech-to-text,Text-to-speech,Speech-to-speech,Audio codec and VAD,LLM and tool calling,Forecasting,Cellular automata,Text classification,Terrain and visualization,Weather,Sensor and privacy research,Benchmarking" | split: "," %}
+<div class="cat-list">
 {% for g in task_groups %}
-  {% assign items = site.collection | where: "task_group", g %}
-  {% if items.size > 0 %}
-<p class="group-label">{{ g }} <span class="group-count">({{ items.size }})</span></p>
-<div class="cat-grid-wrap">
-<div class="cat-grid">
-{% for item in items %}
-  {% if item.what_is and item.what_is != "" %}
-    {% assign desc = item.what_is %}
-  {% else %}
-    {% assign sentences = item.blurb | split: ". " %}
-    {% assign desc = sentences[0] | strip | append: "." | replace: "..", "." %}
-  {% endif %}
-  {% assign facts = "" %}
-  {% if item.model_size and item.model_size != "" %}{% assign facts = item.model_size %}{% endif %}
-  {% if item.runs and item.runs != "" %}
-    {% if facts != "" %}{% assign facts = facts | append: " &middot; " %}{% endif %}
-    {% assign facts = facts | append: item.runs %}
-  {% endif %}
-  <a class="cat-card" href="{{ item.url | relative_url }}">
-    <span class="cat-card-kind">{{ item.kind }}</span>
-    <h3 class="cat-card-title">{{ item.title }}</h3>
-    <p class="cat-card-desc">{{ desc }}</p>
-    {% if facts != "" %}<p class="cat-card-facts">{{ facts }}</p>{% endif %}
-  </a>
+  {% assign projects = site.collection | where: "task_group", g | where: "kind", "code" %}
+  {% for project in projects %}
+    {% assign owned = site.collection | where: "repo", project.repo %}
+    {% assign owned_models = 0 %}
+    {% assign owned_datasets = 0 %}
+    {% for o in owned %}
+      {% if o.kind == "model" %}{% assign owned_models = owned_models | plus: 1 %}{% endif %}
+      {% if o.kind == "dataset" %}{% assign owned_datasets = owned_datasets | plus: 1 %}{% endif %}
+    {% endfor %}
+    {% assign facts = "" %}
+    {% if owned_models > 0 %}
+      {% if owned_models == 1 %}{% assign facts = "1 model" %}{% else %}{% assign facts = owned_models | append: " models" %}{% endif %}
+    {% endif %}
+    {% if owned_datasets > 0 %}
+      {% if facts != "" %}{% assign facts = facts | append: " &middot; " %}{% endif %}
+      {% if owned_datasets == 1 %}{% assign facts = facts | append: "1 dataset" %}{% else %}{% assign facts = facts | append: owned_datasets | append: " datasets" %}{% endif %}
+    {% endif %}
+    <a class="cat-card" href="{{ project.url | relative_url }}">
+      <h3 class="cat-card-title">{{ project.title }}</h3>
+      <p class="cat-card-desc">{{ project.what_is }}</p>
+      {% if facts != "" %}<p class="cat-card-facts">{{ facts }}</p>{% endif %}
+    </a>
+  {% endfor %}
 {% endfor %}
 </div>
-</div>
-  {% endif %}
-{% endfor %}
