@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<h1>{{ page.title }}</h1>
+
+{% if page.what_is and page.what_is != "" %}<p class="lead">{{ page.what_is }}</p>{% endif %}
+
+{{ content }}
+
+<dl class="card-fields">
+  {% if page.kind and page.kind != "" %}<dt>Type</dt><dd>{{ page.kind }}</dd>{% endif %}
+  {% if page.runs and page.runs != "" %}<dt>Runs</dt><dd>{{ page.runs }}</dd>{% endif %}
+  {% if page.original_model and page.original_model != "" %}<dt>Model</dt><dd>{{ page.original_model }}{% if page.model_size and page.model_size != "" %}, {{ page.model_size }}{% endif %}{% if page.license and page.license != "" %}, {{ page.license }}{% endif %}</dd>{% endif %}
+  {% if page.model_size and page.model_size != "" and page.original_model == "" %}<dt>Size</dt><dd>{{ page.model_size }}{% if page.license and page.license != "" %}, {{ page.license }}{% endif %}</dd>{% endif %}
+  {% if page.demo and page.demo != "" %}<dt>Demo</dt><dd><a href="{{ page.demo }}">{{ page.demo }}</a></dd>{% endif %}
+  {% if page.demo_pages and page.demo_pages != "" %}<dt>Demo (GitHub Pages)</dt><dd><a href="{{ page.demo_pages }}">{{ page.demo_pages }}</a></dd>{% endif %}
+  {% if page.repo and page.repo != "" %}<dt>Source</dt><dd><a href="https://github.com/{{ page.repo }}">{{ page.repo }}</a></dd>{% endif %}
+  {% if page.hf and page.hf != "" %}<dt>HuggingFace</dt><dd><a href="https://huggingface.co/{{ page.hf }}">{{ page.hf }}</a></dd>{% endif %}
+  {% if page.dataset and page.dataset != "" %}<dt>Dataset</dt><dd><a href="https://huggingface.co/datasets/{{ page.dataset }}">{{ page.dataset }}</a></dd>{% endif %}
+  {% if page.perf_highlight and page.perf_highlight != "" %}<dt>Perf</dt><dd>{{ page.perf_highlight }}</dd>{% endif %}
+  {% if page.status and page.status != "" %}<dt>Status</dt><dd>{{ page.status }}</dd>{% endif %}
+</dl>
+
+<p><a href="{{ '/collection/' | relative_url }}">&larr; Collection</a></p>

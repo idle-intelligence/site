@@ -1,0 +1,42 @@
+{% assign n_models = 0 %}
+{% assign n_datasets = 0 %}
+{% assign n_repos = 0 %}
+{% for item in site.collection %}
+  {% if item.kind == "model" %}{% assign n_models = n_models | plus: 1 %}{% endif %}
+  {% if item.kind == "dataset" %}{% assign n_datasets = n_datasets | plus: 1 %}{% endif %}
+  {% if item.kind == "code" %}{% assign n_repos = n_repos | plus: 1 %}{% endif %}
+{% endfor %}
+
+<p class="counts">{{ n_models }} models &middot; {{ n_datasets }} datasets &middot; {{ n_repos }} repos</p>
+
+{% assign task_groups = "Speech-to-text,Text-to-speech,Speech-to-speech,Audio codec and VAD,LLM and tool calling,Forecasting,Cellular automata,Text classification,Terrain and visualization,Weather,Sensor and privacy research,Benchmarking" | split: "," %}
+{% for g in task_groups %}
+  {% assign items = site.collection | where: "task_group", g %}
+  {% if items.size > 0 %}
+<p class="group-label">{{ g }} <span class="group-count">({{ items.size }})</span></p>
+<div class="catalogue-wrap">
+<table class="catalogue">
+<colgroup>
+  <col class="cat-kind"><col class="cat-name"><col class="cat-size"><col class="cat-runs"><col class="cat-links">
+</colgroup>
+<tbody>
+{% for item in items %}
+  <tr>
+    <td class="cat-kind">{{ item.kind }}</td>
+    <td class="cat-name"><a href="{{ item.url | relative_url }}">{{ item.title }}</a></td>
+    <td class="cat-size">{% if item.model_size and item.model_size != "" %}{{ item.model_size }}{% endif %}</td>
+    <td class="cat-runs">{% if item.runs and item.runs != "" %}{{ item.runs }}{% endif %}</td>
+    <td class="cat-links">
+      {% if item.demo and item.demo != "" %}<a href="{{ item.demo }}">demo</a>{% endif %}
+      {% if item.demo_pages and item.demo_pages != "" %}<a href="{{ item.demo_pages }}">pages</a>{% endif %}
+      {% if item.repo and item.repo != "" %}<a href="https://github.com/{{ item.repo }}">source</a>{% endif %}
+      {% if item.hf and item.hf != "" %}<a href="https://huggingface.co/{{ item.hf }}">hf</a>{% endif %}
+      {% if item.dataset and item.dataset != "" %}<a href="https://huggingface.co/datasets/{{ item.dataset }}">hf</a>{% endif %}
+    </td>
+  </tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+  {% endif %}
+{% endfor %}
