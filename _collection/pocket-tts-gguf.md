@@ -1,0 +1,26 @@
+---
+layout: card
+title: pocket-tts-gguf
+kind: model
+task_group: Text-to-speech
+repo: idle-intelligence/tts-web
+hf: idle-intelligence/pocket-tts-gguf
+demo: "https://trucs.ai/tts/"
+demo_pages: "https://idle-intelligence.github.io/tts-web/web/"
+original_model: kyutai/pocket-tts-without-voice-cloning
+dataset: ""
+perf_highlight: ""
+what_is: The GGUF Q8_0 weights tts-web's Pocket TTS engine actually loads in the browser.
+runs: browser, WASM
+model_size: ~97M params, 128MB (Q8_0, decoder path only)
+license: CC-BY-4.0
+status: maintained
+blurb: >-
+  Q8_0 GGUF quantization of Kyutai's Pocket TTS, decoder path only (the Mimi
+  encoder is excluded, TTS never needs it): transformer backbone, flow matching
+  network, Mimi decoder and decoder transformer, shrunk from 236MB to 128MB.
+  Runs via a tiled WASM SIMD128 quantized matmul kernel for about 2x realtime on
+  desktop Chrome.
+---
+
+{{ page.blurb }}
