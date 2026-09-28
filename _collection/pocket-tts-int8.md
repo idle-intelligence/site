@@ -1,9 +1,12 @@
 ---
-layout: default
+layout: card
 title: pocket-tts-int8
-repo: ""
+kind: model
+task_group: Text-to-speech
+repo: idle-intelligence/tts-web
 hf: idle-intelligence/pocket-tts-int8
 demo: ""
+demo_pages: ""
 original_model: kyutai/pocket-tts-without-voice-cloning
 dataset: ""
 perf_highlight: ""
@@ -13,9 +16,9 @@ model_size: 100M params, 132MB (channel-wise INT8, 41% smaller than the original
 license: CC-BY-4.0
 status: maintained
 blurb: >-
-  Channel-wise INT8 quantization of Kyutai's Pocket TTS, shrinking the
-  weights from 225MB to 132MB for faster loading in browser-based
-  text-to-speech inference via WebAssembly.
+  Channel-wise INT8 quantization of Kyutai's Pocket TTS, shrinking the weights
+  from 225MB to 132MB. An earlier quantization than the GGUF Q8_0 build (pocket-
+  tts-gguf) the live tts-web demo actually loads.
 ---
 
 {{ page.blurb }}

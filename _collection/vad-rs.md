@@ -1,9 +1,12 @@
 ---
-layout: default
+layout: card
 title: vad-rs
+kind: code
+task_group: Audio codec and VAD
 repo: idle-intelligence/vad-rs
 hf: idle-intelligence/silero-vad-v5-safetensors
 demo: ""
+demo_pages: ""
 original_model: snakers4/silero-vad
 dataset: ""
 perf_highlight: ""
@@ -13,10 +16,10 @@ model_size: 1.2MB
 license: MIT
 status: maintained
 blurb: >-
-  Silero VAD v5 inference in Rust via candle (CPU tensor ops). Accepts
-  24kHz PCM, resamples to 16kHz, and emits SpeechStart/SpeechEnd events
-  with configurable thresholds and redemption-frame hysteresis. Weights
-  converted from the original ONNX model to safetensors.
+  Silero VAD v5 inference in Rust via candle (CPU tensor ops). Accepts 24kHz
+  PCM, resamples to 16kHz, and emits SpeechStart/SpeechEnd events with
+  configurable thresholds and redemption-frame hysteresis. Weights converted
+  from the original ONNX model to safetensors.
 ---
 
 {{ page.blurb }}

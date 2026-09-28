@@ -1,9 +1,12 @@
 ---
-layout: default
+layout: card
 title: kitten-tts-nano-safetensors
-repo: ""
+kind: model
+task_group: Text-to-speech
+repo: idle-intelligence/tts-web
 hf: idle-intelligence/kitten-tts-nano-safetensors
-demo: ""
+demo: "https://trucs.ai/tts/"
+demo_pages: "https://idle-intelligence.github.io/tts-web/web/"
 original_model: KittenML/kitten-tts-nano-0.8
 dataset: ""
 perf_highlight: ""
@@ -13,10 +16,10 @@ model_size: 14M params, 53MB
 license: Apache-2.0
 status: maintained
 blurb: >-
-  KittenTTS nano voice weights converted from ONNX to safetensors for
-  candle inference in Rust. A distilled, non-autoregressive StyleTTS2
-  model with eight built-in voices, packaged for both a native CLI and
-  the browser text-to-speech demo.
+  KittenTTS nano voice weights converted from ONNX to safetensors for candle
+  inference in Rust. A distilled, non-autoregressive StyleTTS2 model with eight
+  built-in voices, packaged for both a native CLI and the browser text-to-speech
+  demo.
 ---
 
 {{ page.blurb }}
