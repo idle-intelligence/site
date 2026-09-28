@@ -10,6 +10,12 @@ title: Home
 
 <p class="lead">{{ site.description }}</p>
 
+<p class="section-label">Collection</p>
+
+{% include catalogue.html %}
+
+<p><a href="{{ '/collection/' | relative_url }}">Every card, one page each →</a></p>
+
 ---
 
 <p class="section-label">Research Areas</p>
