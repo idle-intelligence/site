@@ -13,7 +13,7 @@ perf_highlight: ""
 what_is: A weather estimate for any point on Earth from the nearest METAR-reporting stations.
 runs: browser, WASM, native
 license: MIT
-status: not yet published
+status: maintained
 blurb: >-
   The k nearest METAR stations within 100km are averaged by inverse distance
   weighting, with corrections for elevation (a lapse rate fitted across the
