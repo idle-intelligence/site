@@ -20,8 +20,8 @@ blurb: >-
   7,534 stations across 266 IEM ASOS/AWOS networks, one network per country or
   US state/Canadian province. 5,614 reported at least once in the trailing 7-day
   build window and are kept in stations.json; the remaining 1,920 silent
-  stations are kept, flagged, in stations_all.json. Backs weather-web's nearest-
-  station search. Published on Hugging Face. A scheduled Hugging Face Job
+  stations are kept, flagged, in stations_all.json. Backs weather-web's
+  nearest-station search. Published on Hugging Face. A scheduled Hugging Face Job
   rebuilds the roster every Monday, so the active list follows the stations
   that are actually reporting.
 ---

@@ -23,11 +23,19 @@ blurb: >-
   alternatives on the same task: a 3,490-parameter BERT-style classifier, a
   1,442-parameter MLP, and a 3,329-parameter stencil-attention model that solves
   the whole grid in one pass, collected in stencil-life. A compare page runs
-  every method on the same grid, one tab. Measured in the same browser tab,
-  16x16, Apple M2: the BERT classifier runs at 0.0195 s/generation (256/256
-  cells correct, batched), the MLP at 0.0253 s/generation (256/256, batched),
-  the stencil model at 0.0928 s/generation (256/256), and the classical
-  lookup table at 2.98e-6 s/generation (256/256).
+  every method on the same grid, one tab.
 ---
 
 {{ page.blurb }}
+
+Measured in a browser tab at 16x16 on an M2:
+
+| method | s / generation | parameters | cells correct |
+|---|---|---|---|
+| Game of Life (rule) | 5.43e-6 | no parameters | 256 / 256 |
+| lookup table | 2.98e-6 | 512-entry table | 256 / 256 |
+| LLM per cell (trained) | 28.46 | 0.5B (+ adapter) | 256 / 256 |
+| LLM whole grid (trained) | 0.6364 | 0.5B (+ adapter) | 256 / 256 |
+| BERT of Life (batched) | 0.0195 | 3,490 | 256 / 256 |
+| 9 numbers to centre (batched) | 0.0253 | 1,442 | 256 / 256 |
+| stencil (grid to grid) | 0.0928 | 3,329 | 256 / 256 |
