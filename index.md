@@ -11,6 +11,6 @@ wide: true
 
 <p class="lead">{{ site.description }}</p>
 
-<p class="section-label">Collection</p>
+<h2 class="section-label">Collection</h2>
 
 {% include catalogue.html %}

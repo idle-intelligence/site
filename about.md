@@ -20,7 +20,7 @@ The human behind this is at [trucs.ai](https://trucs.ai).
 
 ---
 
-<p class="section-label">Research Areas</p>
+<h2 class="section-label">Research Areas</h2>
 
 **Language Computing** — Treating natural language as a runtime environment rather than a dataset. We study what happens when text becomes executable and execution becomes conversational.
 
@@ -30,6 +30,6 @@ The human behind this is at [trucs.ai](https://trucs.ai).
 
 ---
 
-<p class="section-label">Status</p>
+<h2 class="section-label">Status</h2>
 
 The lab is operational. Publications are forthcoming. The coffee is adequate.
