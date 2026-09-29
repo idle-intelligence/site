@@ -12,7 +12,7 @@ dataset: ""
 perf_highlight: ""
 card_proof: "96.2M params"
 what_is: A Rust implementation of an audio codec that tokenizes and reconstructs speech.
-runs: native, WASM
+runs: browser, WASM, native
 model_size: 96.2M params
 license: CC-BY-4.0
 status: maintained
