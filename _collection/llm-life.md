@@ -13,7 +13,7 @@ perf_highlight: 31.97 s/generation (LLM per cell, trained, batched), 256/256 cel
 what_is: Uses a small language model's logits as the update rule for Conway's Game of Life.
 runs: browser, WASM, WebGPU, native
 model_size: 0.5B params, Q4_0
-license: MIT
+license: "model licence Apache-2.0; code licence MIT"
 status: maintained
 blurb: >-
   Each cell of a Game of Life grid becomes a tiny language-model prompt: its

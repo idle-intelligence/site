@@ -7,7 +7,7 @@ repo: idle-intelligence/tts-web
 hf: idle-intelligence/pocket-tts-gguf
 demo: ""
 demo_pages: "https://idle-intelligence.github.io/tts-web/web/"
-original_model: kyutai/pocket-tts-without-voice-cloning; KittenML/kitten-tts-nano-0.8-fp32
+original_model: kyutai/pocket-tts-without-voice-cloning; KittenML/kitten-tts-nano-0.8
 dataset: ""
 used_on:
   - title: tts
@@ -20,7 +20,7 @@ perf_highlight: "Pocket TTS: 2.28x realtime in WASM/Chrome (TTFB 0.41s), M-serie
 what_is: Converts text to speech in the browser, with two interchangeable lightweight voice models.
 runs: browser, WASM, native
 model_size: Pocket TTS ~100M params; KittenTTS 14M params
-license: CC-BY-4.0 (Pocket TTS); Apache-2.0 (KittenTTS)
+license: "model licence CC-BY-4.0 (Pocket TTS), Apache-2.0 (KittenTTS); code licence MIT"
 status: maintained
 blurb: >-
   Browser-native text-to-speech, 100% client-side via Rust/WASM. Two engines:

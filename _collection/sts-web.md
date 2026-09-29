@@ -16,7 +16,7 @@ perf_highlight: ""
 what_is: A full-duplex speech-to-speech assistant running entirely client-side, still early and rough.
 runs: browser, WASM, WebGPU
 model_size: 6.74B params (pruned from 8.37B, 24 temporal layers), 3.5GB (Q4_K)
-license: NVIDIA Open Model License
+license: "model licence NVIDIA Open Model License; code licence MIT"
 status: experiment
 blurb: >-
   Browser-native speech-to-speech, 100% client-side via Rust/WASM + WebGPU. Runs

@@ -20,7 +20,7 @@ perf_highlight: "76.7% tool-calling accuracy with schema-constrained decoding vs
 what_is: Runs a tool-calling language model entirely in the browser, no server required.
 runs: browser, WASM, WebGPU
 model_size: 0.5B params, ~430MB (Q4_0 GGUF)
-license: Apache-2.0
+license: "model licence Apache-2.0; code licence MIT"
 status: maintained
 blurb: >-
   An original Burn and wgpu implementation of the Qwen2 architecture, compiled

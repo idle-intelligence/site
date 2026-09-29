@@ -16,7 +16,7 @@ perf_highlight: 34 ms per forecast (Q8_0, single signal, 512 context) in Chrome 
 what_is: A from-scratch port of a probabilistic time-series forecasting transformer to the browser.
 runs: native, WASM, WebGPU
 model_size: t0-alpha 101.6M params; t0-beta 256M params
-license: Apache-2.0
+license: "model licence Apache-2.0; code licence MIT"
 status: maintained
 blurb: >-
   Own WGSL implementation of The Forecasting Company's t0 time-series

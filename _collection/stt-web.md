@@ -21,7 +21,7 @@ perf_highlight: ~70ms/frame steady state (Mimi ~21ms + STT ~50ms), RTF 0.91-0.95
 what_is: Transcribes speech to text live in the browser, in English and French.
 runs: browser, WASM, WebGPU
 model_size: ~989M params
-license: CC-BY-4.0
+license: "model licence CC-BY-4.0; code licence MIT"
 status: maintained
 blurb: >-
   Browser-native speech-to-text, 100% client-side via Rust/WASM + WebGPU.
