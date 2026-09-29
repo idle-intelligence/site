@@ -5,11 +5,17 @@ kind: code
 task_group: Terrain and visualization
 repo: idle-intelligence/ridgeline
 hf: ""
-demo: "https://trucs.ai/astres/"
+demo: ""
 demo_pages: "https://idle-intelligence.github.io/ridgeline/web/"
 original_model: ""
 dataset: idle-intelligence/ridgeline-terrain
 perf_highlight: ""
+used_on:
+  - title: astres
+    url: "https://trucs.ai/astres/"
+posts:
+  - title: "About astres (ridgeline)"
+    url: "https://trucs.ai/blog/about-astres"
 what_is: A 3D globe visualizer that renders planetary terrain as stacked ridgeline plots.
 runs: browser, WASM, WebGPU
 license: MIT

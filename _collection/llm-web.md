@@ -5,10 +5,17 @@ kind: code
 task_group: LLM and tool calling
 repo: idle-intelligence/llm-web
 hf: ""
-demo: "https://trucs.ai/llm/"
+demo: ""
 demo_pages: "https://idle-intelligence.github.io/llm-web/web/"
 original_model: Salesforce/xLAM-2-3b-fc-r
 dataset: ""
+used_on:
+  - title: llm
+    url: "https://trucs.ai/llm/"
+  - title: llm + tts
+    url: "https://trucs.ai/llm-tts/"
+  - title: stt + llm + tts
+    url: "https://trucs.ai/stt-llm-tts/"
 perf_highlight: 184 ms/token decode (Q4_0 cooperative matvec kernel, 1.67x speedup over baseline), Apple M2
 what_is: Runs a tool-calling language model entirely in the browser, no server required.
 runs: browser, WASM, WebGPU

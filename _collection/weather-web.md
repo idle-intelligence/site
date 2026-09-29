@@ -6,9 +6,15 @@ task_group: Weather
 repo: idle-intelligence/weather-web
 hf: ""
 dataset: idle-intelligence/metar-stations
-demo: "https://trucs.ai/knn-weather/"
+demo: ""
 demo_pages: "https://idle-intelligence.github.io/weather-web/web/"
 original_model: ""
+used_on:
+  - title: weather
+    url: "https://trucs.ai/knn-weather/"
+posts:
+  - title: "Browser weather"
+    url: "https://trucs.ai/blog/browser-weather"
 perf_highlight: ""
 what_is: A weather estimate for any point on Earth from the nearest METAR-reporting stations.
 runs: browser, WASM, native

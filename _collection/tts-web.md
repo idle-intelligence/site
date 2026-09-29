@@ -5,10 +5,17 @@ kind: code
 task_group: Text-to-speech
 repo: idle-intelligence/tts-web
 hf: idle-intelligence/pocket-tts-gguf
-demo: "https://trucs.ai/tts/"
+demo: ""
 demo_pages: "https://idle-intelligence.github.io/tts-web/web/"
 original_model: kyutai/pocket-tts-without-voice-cloning; KittenML/kitten-tts-nano-0.8-fp32
 dataset: ""
+used_on:
+  - title: tts
+    url: "https://trucs.ai/tts/"
+  - title: llm + tts
+    url: "https://trucs.ai/llm-tts/"
+  - title: stt + llm + tts
+    url: "https://trucs.ai/stt-llm-tts/"
 perf_highlight: "Pocket TTS: 2.28x realtime in WASM/Chrome (TTFB 0.41s), M-series Mac"
 what_is: Converts text to speech in the browser, with two interchangeable lightweight voice models.
 runs: browser, WASM, native

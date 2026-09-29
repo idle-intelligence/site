@@ -5,10 +5,13 @@ kind: code
 task_group: Forecasting
 repo: idle-intelligence/t0-web
 hf: idle-intelligence/t0-alpha-q4_0-webgpu
-demo: "https://trucs.ai/t0/"
+demo: ""
 demo_pages: "https://idle-intelligence.github.io/t0-web/web/"
 original_model: theforecastingcompany/t0-alpha; theforecastingcompany/t0-beta
 dataset: ""
+used_on:
+  - title: forecasting
+    url: "https://trucs.ai/t0/"
 perf_highlight: 34 ms per forecast (Q8_0, single signal, 512 context) in Chrome on an Apple M2; 30 ms with Q4_0
 what_is: A from-scratch port of a probabilistic time-series forecasting transformer to the browser.
 runs: native, WASM, WebGPU

@@ -5,10 +5,13 @@ kind: code
 task_group: Speech-to-speech
 repo: idle-intelligence/sts-web
 hf: idle-intelligence/personaplex-24L-q4_k-webgpu
-demo: "https://trucs.ai/sts/"
+demo: ""
 demo_pages: "https://idle-intelligence.github.io/sts-web/web/"
 original_model: nvidia/personaplex-7b-v1
 dataset: ""
+used_on:
+  - title: sts
+    url: "https://trucs.ai/sts/"
 perf_highlight: ""
 what_is: A full-duplex speech-to-speech assistant running entirely client-side, still early and rough.
 runs: browser, WASM, WebGPU
