@@ -18,7 +18,7 @@ used_on:
     url: "https://trucs.ai/stt-llm-tts/"
 perf_highlight: "Pocket TTS: 2.28x realtime in WASM/Chrome (TTFB 0.41s), M-series Mac"
 card_proof: "2.28x realtime, WASM/Chrome"
-what_is: Converts text to speech in the browser, with two interchangeable lightweight voice models.
+what_is: Converts text to speech in the browser with two lightweight voice models, multilingual Pocket TTS in review.
 runs: browser, WASM, native
 model_size: Pocket TTS ~100M params; KittenTTS 14M params
 license: "model licence CC-BY-4.0 (Pocket TTS), Apache-2.0 (KittenTTS); code licence MIT"
@@ -27,7 +27,9 @@ blurb: >-
   Browser-native text-to-speech, 100% client-side via Rust/WASM. Two engines:
   Pocket TTS (autoregressive, Mimi codec decoder, streaming) and KittenTTS
   (single forward pass, StyleTTS2 distilled, 14M params). Weights on HuggingFace
-  as GGUF/safetensors; 0.23-0.24 RTF native.
+  as GGUF/safetensors; 0.23-0.24 RTF native. Multilingual Pocket TTS (French,
+  German, Spanish, Italian and Portuguese, next to English) is in review, and
+  matches the official implementation frame for frame in F32.
 ---
 
 {{ page.blurb }}
