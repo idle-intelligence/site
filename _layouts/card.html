@@ -51,8 +51,8 @@ layout: default
 {% assign has_posts = page.posts and page.posts.size > 0 %}
 {% if has_used_on or has_posts %}
 <h2 class="section-label">Learn more</h2>
-{% if has_used_on %}{% for u in page.used_on %}<p>Used on: <a href="{{ u.url }}">{{ u.title }}</a></p>
-{% endfor %}{% endif %}{% if has_posts %}{% for post in page.posts %}<p>Blog post: <a href="{{ post.url }}">{{ post.title }}</a></p>
+{% if has_used_on %}<p>Used on: {% for u in page.used_on %}<a href="{{ u.url }}">{{ u.title }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+{% endif %}{% if has_posts %}{% for post in page.posts %}<p>Blog post: <a href="{{ post.url }}">{{ post.title }}</a></p>
 {% endfor %}{% endif %}
 {% endif %}
 
