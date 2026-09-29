@@ -31,7 +31,7 @@ layout: default
 {% endif %}
 
 <dl class="card-fields">
-  {% if page.kind and page.kind != "" %}<dt>Type</dt><dd>{{ page.kind }}</dd>{% endif %}
+  {% if page.kind and page.kind != "" and page.kind != "code" %}<dt>Type</dt><dd>{{ page.kind }}</dd>{% endif %}
   {% if page.runs and page.runs != "" %}<dt>Runs</dt><dd>{{ page.runs }}</dd>{% endif %}
   {% if page.kind == "code" and owned_assets.size <= 1 %}
     {% if page.original_model and page.original_model != "" %}<dt>Model</dt><dd>{{ page.original_model }}{% if page.model_size and page.model_size != "" %}, {{ page.model_size }}{% endif %}{% if page.license and page.license != "" %}, {{ page.license }}{% endif %}</dd>{% endif %}
