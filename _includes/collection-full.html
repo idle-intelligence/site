@@ -9,12 +9,10 @@
 
 <p class="counts">{{ n_repos }} projects &middot; {{ n_models }} models &middot; {{ n_datasets }} datasets</p>
 
-{% assign task_groups = "Speech-to-text,Text-to-speech,Speech-to-speech,Audio codec and VAD,LLM and tool calling,Forecasting,Cellular automata,Text classification,Terrain and visualization,Weather,Sensor and privacy research,Benchmarking" | split: "," %}
-{% for g in task_groups %}
+{% for g in site.data.task_groups %}
   {% assign projects = site.collection | where: "task_group", g | where: "kind", "code" %}
   {% for project in projects %}
-    {% assign owned = site.collection | where: "repo", project.repo %}
-    {% assign owned_assets = owned | where_exp: "o", "o.kind == 'model' or o.kind == 'dataset'" %}
+    {% include owned-assets.html repo=project.repo %}
 <div class="cat-list">
     <a class="cat-card" href="{{ project.url | relative_url }}">
       <span class="cat-card-kind">{{ project.kind }}</span>

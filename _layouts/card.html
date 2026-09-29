@@ -18,8 +18,7 @@ layout: default
 {{ content }}
 
 {% if page.kind == "code" %}
-  {% assign owned = site.collection | where: "repo", page.repo %}
-  {% assign owned_assets = owned | where_exp: "o", "o.kind == 'model' or o.kind == 'dataset'" %}
+  {% include owned-assets.html repo=page.repo %}
   {% if owned_assets.size > 0 %}
 <h2 class="section-label">Includes</h2>
 <div class="cat-list-nested">

@@ -1,0 +1,11 @@
+{% assign owned_assets = "" | split: "" %}
+{% assign owned_models = 0 %}
+{% assign owned_datasets = 0 %}
+{% if include.repo and include.repo != "" %}
+  {% assign owned = site.collection | where: "repo", include.repo %}
+  {% assign owned_assets = owned | where_exp: "o", "o.kind == 'model' or o.kind == 'dataset'" %}
+  {% for o in owned_assets %}
+    {% if o.kind == "model" %}{% assign owned_models = owned_models | plus: 1 %}{% endif %}
+    {% if o.kind == "dataset" %}{% assign owned_datasets = owned_datasets | plus: 1 %}{% endif %}
+  {% endfor %}
+{% endif %}

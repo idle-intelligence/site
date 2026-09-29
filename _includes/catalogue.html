@@ -9,18 +9,11 @@
 
 <p class="counts">{{ n_repos }} projects &middot; {{ n_models }} models &middot; {{ n_datasets }} datasets</p>
 
-{% assign task_groups = "Speech-to-text,Text-to-speech,Speech-to-speech,Audio codec and VAD,LLM and tool calling,Forecasting,Cellular automata,Text classification,Terrain and visualization,Weather,Sensor and privacy research,Benchmarking" | split: "," %}
 <div class="catalogue-grid">
-{% for g in task_groups %}
+{% for g in site.data.task_groups %}
   {% assign projects = site.collection | where: "task_group", g | where: "kind", "code" %}
   {% for project in projects %}
-    {% assign owned = site.collection | where: "repo", project.repo %}
-    {% assign owned_models = 0 %}
-    {% assign owned_datasets = 0 %}
-    {% for o in owned %}
-      {% if o.kind == "model" %}{% assign owned_models = owned_models | plus: 1 %}{% endif %}
-      {% if o.kind == "dataset" %}{% assign owned_datasets = owned_datasets | plus: 1 %}{% endif %}
-    {% endfor %}
+    {% include owned-assets.html repo=project.repo %}
     {% assign facts = "" %}
     {% if owned_models > 0 %}
       {% if owned_models == 1 %}{% assign facts = "1 model" %}{% else %}{% assign facts = owned_models | append: " models" %}{% endif %}
@@ -34,6 +27,7 @@
       <span class="grid-card-task">{{ g }}</span>
       <h3 class="grid-card-title">{{ project.title }}</h3>
       <p class="grid-card-desc">{{ project.what_is }}</p>
+      {% if project.card_proof and project.card_proof != "" %}<p class="grid-card-proof">{{ project.card_proof }}</p>{% endif %}
       <p class="grid-card-tags">
         {% if facts != "" %}<span>{{ facts }}</span>{% endif %}
         {% if runtime != "" %}<span>{{ runtime }}</span>{% endif %}
