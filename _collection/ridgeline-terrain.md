@@ -8,6 +8,9 @@ hf: ""
 dataset: idle-intelligence/ridgeline-terrain
 demo: "https://trucs.ai/astres/"
 demo_pages: "https://idle-intelligence.github.io/ridgeline/web/"
+used_on:
+  - title: astres
+    url: "https://trucs.ai/astres/"
 original_model: ""
 original_author: ""
 contribution: Built by Idle Intelligence from public-domain government elevation data.

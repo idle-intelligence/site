@@ -7,6 +7,9 @@ repo: idle-intelligence/sts-web
 hf: idle-intelligence/personaplex-24L-q4_k-webgpu
 demo: "https://trucs.ai/sts/"
 demo_pages: "https://idle-intelligence.github.io/sts-web/web/"
+used_on:
+  - title: sts
+    url: "https://trucs.ai/sts/"
 original_model: nvidia/personaplex-7b-v1
 original_author: NVIDIA
 contribution: Pruned, QLoRA-recovered, Q4_K quantization for WebGPU by Idle Intelligence.

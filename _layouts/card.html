@@ -39,8 +39,8 @@ layout: default
   {% elsif page.kind != "code" %}
     {% if page.model_size and page.model_size != "" %}<dt>Size</dt><dd>{{ page.model_size }}</dd>{% endif %}
   {% endif %}
-  {% if page.demo and page.demo != "" %}<dt>Demo</dt><dd><a href="{{ page.demo }}">{{ page.demo }}</a></dd>{% endif %}
   {% if page.demo_pages and page.demo_pages != "" %}<dt>Demo (GitHub Pages)</dt><dd><a href="{{ page.demo_pages }}">{{ page.demo_pages }}</a></dd>{% endif %}
+  {% if page.kind == "code" and page.demo and page.demo != "" %}<dt>Demo</dt><dd><a href="{{ page.demo }}">{{ page.demo }}</a></dd>{% endif %}
   {% if page.repo and page.repo != "" %}<dt>Source</dt><dd><a href="https://github.com/{{ page.repo }}">{{ page.repo }}</a></dd>{% endif %}
   {% if page.hf and page.hf != "" %}<dt>HuggingFace</dt><dd><a href="https://huggingface.co/{{ page.hf }}">{{ page.hf }}</a></dd>{% endif %}
   {% if page.dataset and page.dataset != "" %}<dt>Dataset</dt><dd><a href="https://huggingface.co/datasets/{{ page.dataset }}">{{ page.dataset }}</a></dd>{% endif %}
@@ -48,15 +48,13 @@ layout: default
   {% if page.status and page.status != "" %}<dt>Status</dt><dd>{{ page.status }}</dd>{% endif %}
 </dl>
 
-{% if page.kind == "code" %}
-  {% assign has_used_on = page.used_on and page.used_on.size > 0 %}
-  {% assign has_posts = page.posts and page.posts.size > 0 %}
-  {% if has_used_on or has_posts %}
+{% assign has_used_on = page.used_on and page.used_on.size > 0 %}
+{% assign has_posts = page.posts and page.posts.size > 0 %}
+{% if has_used_on or has_posts %}
 <h2 class="section-label">Learn more</h2>
 {% if has_used_on %}{% for u in page.used_on %}<p>Used on: <a href="{{ u.url }}">{{ u.title }}</a></p>
 {% endfor %}{% endif %}{% if has_posts %}{% for post in page.posts %}<p>Blog post: <a href="{{ post.url }}">{{ post.title }}</a></p>
 {% endfor %}{% endif %}
-  {% endif %}
 {% endif %}
 
 <p><a href="{{ '/collection/' | relative_url }}">&larr; Collection</a></p>

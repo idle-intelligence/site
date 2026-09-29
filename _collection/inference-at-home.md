@@ -7,6 +7,9 @@ repo: idle-intelligence/hive-ml-classifier
 hf: idle-intelligence/inference-at-home
 demo: "https://trucs.ai/classifier/"
 demo_pages: ""
+used_on:
+  - title: classifier
+    url: "https://trucs.ai/classifier/"
 original_model: ""
 original_author: ""
 contribution: Trained by Idle Intelligence.

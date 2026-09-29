@@ -7,6 +7,9 @@ repo: idle-intelligence/tts-web
 hf: idle-intelligence/kitten-tts-nano-safetensors
 demo: "https://trucs.ai/tts/"
 demo_pages: "https://idle-intelligence.github.io/tts-web/web/"
+used_on:
+  - title: tts
+    url: "https://trucs.ai/tts/"
 original_model: KittenML/kitten-tts-nano-0.8
 original_author: KittenML
 contribution: Safetensors conversion for candle inference by Idle Intelligence.

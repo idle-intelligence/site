@@ -7,6 +7,9 @@ repo: idle-intelligence/stt-web
 hf: idle-intelligence/stt-1b-en_fr-q4_0-webgpu
 demo: "https://trucs.ai/stt/"
 demo_pages: "https://idle-intelligence.github.io/stt-web/web/"
+used_on:
+  - title: stt
+    url: "https://trucs.ai/stt/"
 original_model: kyutai/stt-1b-en_fr
 original_author: Kyutai
 contribution: Q4_0 quantization for WebGPU by Idle Intelligence.

@@ -7,6 +7,9 @@ repo: idle-intelligence/t0-web
 hf: idle-intelligence/t0-alpha-q4_0-webgpu
 demo: "https://trucs.ai/t0/"
 demo_pages: "https://idle-intelligence.github.io/t0-web/web/"
+used_on:
+  - title: forecasting
+    url: "https://trucs.ai/t0/"
 original_model: theforecastingcompany/t0-alpha
 original_author: The Forecasting Company
 contribution: Q4_0 quantization for WebGPU by Idle Intelligence.
