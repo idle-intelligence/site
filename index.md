@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Home
+wide: true
 ---
 
 <div class="title-row">
@@ -13,21 +14,3 @@ title: Home
 <p class="section-label">Collection</p>
 
 {% include catalogue.html %}
-
-<p><a href="{{ '/collection/' | relative_url }}">Every card, one page each →</a></p>
-
----
-
-<p class="section-label">Research Areas</p>
-
-**Language Computing** — Treating natural language as a runtime environment rather than a dataset. We study what happens when text becomes executable and execution becomes conversational.
-
-**Distributed Inference** — Running models where no one expects them. Commodity hardware, edge devices, browser tabs left open overnight. If it has a CPU, it has potential.
-
-**Networked Cognition** — What emerges when many small models talk to each other instead of one large model talking to itself. We don't know yet. That's the point.
-
----
-
-<p class="section-label">Status</p>
-
-The lab is operational. Publications are forthcoming. The coffee is adequate.

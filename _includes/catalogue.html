@@ -10,7 +10,7 @@
 <p class="counts">{{ n_repos }} projects &middot; {{ n_models }} models &middot; {{ n_datasets }} datasets</p>
 
 {% assign task_groups = "Speech-to-text,Text-to-speech,Speech-to-speech,Audio codec and VAD,LLM and tool calling,Forecasting,Cellular automata,Text classification,Terrain and visualization,Weather,Sensor and privacy research,Benchmarking" | split: "," %}
-<div class="cat-list">
+<div class="catalogue-grid">
 {% for g in task_groups %}
   {% assign projects = site.collection | where: "task_group", g | where: "kind", "code" %}
   {% for project in projects %}
@@ -26,13 +26,18 @@
       {% if owned_models == 1 %}{% assign facts = "1 model" %}{% else %}{% assign facts = owned_models | append: " models" %}{% endif %}
     {% endif %}
     {% if owned_datasets > 0 %}
-      {% if facts != "" %}{% assign facts = facts | append: " &middot; " %}{% endif %}
+      {% if facts != "" %}{% assign facts = facts | append: ", " %}{% endif %}
       {% if owned_datasets == 1 %}{% assign facts = facts | append: "1 dataset" %}{% else %}{% assign facts = facts | append: owned_datasets | append: " datasets" %}{% endif %}
     {% endif %}
-    <a class="cat-card" href="{{ project.url | relative_url }}">
-      <h3 class="cat-card-title">{{ project.title }}</h3>
-      <p class="cat-card-desc">{{ project.what_is }}</p>
-      {% if facts != "" %}<p class="cat-card-facts">{{ facts }}</p>{% endif %}
+    {% assign runtime = project.runs | split: "," | first | strip %}
+    <a class="grid-card" href="{{ project.url | relative_url }}">
+      <span class="grid-card-task">{{ g }}</span>
+      <h3 class="grid-card-title">{{ project.title }}</h3>
+      <p class="grid-card-desc">{{ project.what_is }}</p>
+      <p class="grid-card-tags">
+        {% if facts != "" %}<span>{{ facts }}</span>{% endif %}
+        {% if runtime != "" %}<span>{{ runtime }}</span>{% endif %}
+      </p>
     </a>
   {% endfor %}
 {% endfor %}
