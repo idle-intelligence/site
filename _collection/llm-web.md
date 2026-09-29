@@ -29,9 +29,7 @@ blurb: >-
   quantized GGUF weights, runtime LoRA adapters, schema-constrained decoding for
   tool calls, and a multi-step agent loop. Runs Qwen2.5-0.5B-Instruct in the
   browser with runtime LoRA adapters, the same engine behind llm-life's
-  language-model methods. The public demo runs a wllama fallback
-  (SmolLM2-360M-Instruct); the Burn+wgpu engine demo is a local dev page, not
-  yet deployed publicly.
+  language-model methods. The public demo runs SmolLM2-360M-Instruct.
 ---
 
 {{ page.blurb }}
