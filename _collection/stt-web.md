@@ -18,6 +18,7 @@ posts:
   - title: "Claude and stt-web"
     url: "https://trucs.ai/blog/claude-and-stt-web"
 perf_highlight: ~70ms/frame steady state (Mimi ~21ms + STT ~50ms), RTF 0.91-0.95x, Apple M2 (10-core GPU)
+card_proof: "70ms/frame, RTF 0.91-0.95x"
 what_is: Transcribes speech to text live in the browser, in English and French.
 runs: browser, WASM, WebGPU
 model_size: ~989M params

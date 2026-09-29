@@ -10,6 +10,7 @@ demo_pages: ""
 original_model: ""
 dataset: ""
 perf_highlight: ""
+card_proof: "94.4% accuracy, 94.3% F1"
 used_on:
   - title: classifier
     url: "https://trucs.ai/classifier/"

@@ -10,6 +10,7 @@ demo_pages: ""
 original_model: ""
 dataset: ""
 perf_highlight: 33.2 t/s decode (Qwen3-Next-80B-A3B Config A, RAM-resident), RTX 3080 10GB + Ryzen 9 3900X + 64GB DDR4-3000
+card_proof: "33.2 t/s decode, Qwen3-Next-80B-A3B"
 what_is: A reproducible benchmark comparing local language models against hosted references on constrained hardware.
 runs: native
 license: ""

@@ -16,6 +16,7 @@ posts:
   - title: "Browser weather"
     url: "https://trucs.ai/blog/browser-weather"
 perf_highlight: ""
+card_proof: "7,534 stations worldwide"
 what_is: A weather estimate for any point on Earth from the nearest METAR-reporting stations.
 runs: browser, WASM, native
 license: MIT

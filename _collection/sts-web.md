@@ -13,6 +13,7 @@ used_on:
   - title: sts
     url: "https://trucs.ai/sts/"
 perf_highlight: ""
+card_proof: "24 of 32 layers, Q4_K"
 what_is: A full-duplex speech-to-speech assistant running entirely client-side, still early and rough.
 runs: browser, WASM, WebGPU
 model_size: 6.74B params (pruned from 8.37B, 24 temporal layers), 3.5GB (Q4_K)

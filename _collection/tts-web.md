@@ -17,6 +17,7 @@ used_on:
   - title: stt + llm + tts
     url: "https://trucs.ai/stt-llm-tts/"
 perf_highlight: "Pocket TTS: 2.28x realtime in WASM/Chrome (TTFB 0.41s), M-series Mac"
+card_proof: "2.28x realtime, WASM/Chrome"
 what_is: Converts text to speech in the browser, with two interchangeable lightweight voice models.
 runs: browser, WASM, native
 model_size: Pocket TTS ~100M params; KittenTTS 14M params

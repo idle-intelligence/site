@@ -10,6 +10,7 @@ demo_pages: ""
 original_model: snakers4/silero-vad
 dataset: ""
 perf_highlight: ""
+card_proof: ""
 what_is: Detects the start and stop of speech in an audio stream using a small neural model.
 runs: native
 model_size: 1.2MB

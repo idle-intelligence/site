@@ -17,6 +17,7 @@ used_on:
   - title: stt + llm + tts
     url: "https://trucs.ai/stt-llm-tts/"
 perf_highlight: "76.7% tool-calling accuracy with schema-constrained decoding vs 53.3% unconstrained, 43-utterance eval"
+card_proof: "76.7% tool-calling accuracy, constrained decoding"
 what_is: Runs a tool-calling language model entirely in the browser, no server required.
 runs: browser, WASM, WebGPU
 model_size: 0.5B params, ~430MB (Q4_0 GGUF)

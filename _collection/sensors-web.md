@@ -10,6 +10,7 @@ demo_pages: ""
 original_model: ""
 dataset: ""
 perf_highlight: ""
+card_proof: ""
 what_is: A page that probes which device sensors a mobile browser exposes without a permission prompt.
 runs: browser, native
 license: ""

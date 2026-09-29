@@ -10,6 +10,7 @@ demo_pages: "https://idle-intelligence.github.io/ridgeline/web/"
 original_model: ""
 dataset: idle-intelligence/ridgeline-terrain
 perf_highlight: ""
+card_proof: "11 bodies rendered"
 used_on:
   - title: astres
     url: "https://trucs.ai/astres/"

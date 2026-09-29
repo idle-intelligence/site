@@ -10,6 +10,7 @@ demo_pages: "https://idle-intelligence.github.io/llm-life/web/"
 original_model: Qwen/Qwen2.5-0.5B-Instruct
 dataset: ""
 perf_highlight: 31.97 s/generation (LLM per cell, trained, batched), 256/256 cells correct, 16x16 grid, browser tab, Apple M2
+card_proof: "256/256 cells, 7 methods compared"
 what_is: Uses a small language model's logits as the update rule for Conway's Game of Life.
 runs: browser, WASM, WebGPU, native
 model_size: 0.5B params, Q4_0
