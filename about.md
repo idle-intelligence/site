@@ -16,7 +16,7 @@ The infrastructure is held together by WebSockets, WASM, and stubbornness. If so
 
 If you want the serious version, go back to the [home page]({{ '/' | relative_url }}).
 
-The human behind this is [Thomas Cambau](https://github.com/ilnmtlbnm), also at [trucs.ai](https://trucs.ai) and on [Hugging Face](https://huggingface.co/ilnmtlbnm).
+The human behind this is [Thomas Cambau](https://github.com/ilnmtlbnm) (ilnmtlbnm), also at [trucs.ai](https://trucs.ai) and on [Hugging Face](https://huggingface.co/ilnmtlbnm).
 
 ---
 
