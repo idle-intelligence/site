@@ -2,7 +2,7 @@
 layout: card
 title: llm-web
 kind: code
-task_group: LLM and tool calling
+task_group: LLM inference
 repo: idle-intelligence/llm-web
 hf: ""
 demo: ""
@@ -18,18 +18,20 @@ used_on:
     url: "https://trucs.ai/stt-llm-tts/"
 perf_highlight: ""
 card_proof: ""
-what_is: Runs a tool-calling language model entirely in the browser, no server required.
-runs: browser, WASM, WebGPU
+what_is: lean, a small LLM inference engine in Rust and WGSL that runs the same code natively and in the browser.
+runs: browser, WASM, WebGPU, native
 model_size: 0.5B params, ~430MB (Q4_0 GGUF)
 license: "model licence Apache-2.0; code licence MIT"
 status: maintained
 blurb: >-
-  An original Burn and wgpu implementation of the Qwen2 architecture, compiled
-  to WebAssembly and running the full forward pass client-side with WebGPU:
-  quantized GGUF weights, runtime LoRA adapters, schema-constrained decoding for
-  tool calls, and a multi-step agent loop. Runs Qwen2.5-0.5B-Instruct in the
-  browser with runtime LoRA adapters, the same engine behind llm-life's
-  language-model methods. The public demo runs SmolLM2-360M-Instruct.
+  lean is an LLM inference engine written in Rust with WGSL compute kernels on
+  wgpu, one codebase that runs natively and compiled to WebAssembly. In the
+  browser it picks WebGPU, CPU threads or a single CPU thread depending on what
+  the device supports. It loads GGUF weights (Q4_0, Q4_1, Q8_0, Q6_K) for Qwen2,
+  Qwen3 and Llama-architecture models, applies LoRA adapters at runtime, and its
+  output matches Hugging Face transformers token for token. It is the engine
+  behind the trucs.ai chat and voice demos and llm-life's language-model
+  methods. The public demo runs SmolLM2-360M-Instruct.
 ---
 
 {{ page.blurb }}
