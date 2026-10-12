@@ -15,4 +15,4 @@ wide: true
 
 {% include catalogue.html %}
 
-Click a card to know more about a project, or explore the [collection]({{ '/collection/' | relative_url }}) of all Repos, Models, Datasets for more details.
+Click a card to know more about a project, or explore the [collection]({{ '/collection/' | relative_url }}) of all the Code, Models, Datasets for more details.
