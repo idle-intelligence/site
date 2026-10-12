@@ -19,6 +19,10 @@ collections:
     permalink: /collection/:path/
 
 exclude:
+  - CLAUDE.md
+  - CLAUDE.local.md
   - Gemfile
   - Gemfile.lock
   - README.md
+  - vendor
+  - node_modules
