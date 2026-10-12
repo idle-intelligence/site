@@ -35,3 +35,22 @@ blurb: >-
 ---
 
 {{ page.blurb }}
+
+## How it is built
+
+lean is three Rust crates, each doing one job, compiled from one source to a native library and to WebAssembly, with no ML framework.
+
+```
+agent-web, chat pages
+  lean-chat   messages to prompt
+  lean        text in, text out
+  lean-core   the forward pass
+```
+
+- **lean-core** is the forward pass. It loads a quantized GGUF model and runs it on the GPU, with hand-written WGSL kernels that keep the weights quantized and dequantize them inside the kernels, or on the CPU, with SIMD dot kernels. It works on token ids and logits, and also holds the KV cache with snapshots and LoRA adapters.
+- **lean** is text in, text out. It adds the tokenizer, sampling, the choice of backend, and the reuse of the KV cache for the prefix a new prompt shares with the previous one. It applies no chat template and keeps no conversation.
+- **lean-chat** turns chat messages into the prompt text a model expects, with the model's own chat template. The text is byte for byte what transformers' `apply_chat_template` returns, tools included.
+
+Agents such as agent-web sit on top of lean and add the tool-calling loop.
+
+In a browser, lean runs on WebGPU, then on CPU threads, then on a single CPU thread. The choice is made by capability, never by measuring the device. The kernels are the same on every device, with no autotuning and no per-device code. Its output is token-exact against Hugging Face transformers: the greedy tokens match the reference on every backend.
