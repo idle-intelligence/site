@@ -10,7 +10,7 @@ demo_pages: ""
 original_model: Qwen/Qwen2.5-3B-Instruct
 dataset: ""
 perf_highlight: ""
-card_proof: "3 of 33 eval cases solved"
+card_proof: ""
 what_is: A tool-calling agent loop for Qwen2.5-Instruct models, running on the lean inference engine.
 runs: browser, WASM, WebGPU, native
 model_size: 3B params (Q4_0 GGUF)
@@ -23,9 +23,7 @@ blurb: >-
   parses the model's tool calls out of its raw output, regenerates when a reply
   is malformed, calls an unknown tool or repeats a call, and repeats until the
   model gives a final text answer. It also holds an offline eval harness that
-  scores runs against 46 utterance cases for a Sonos speaker-control tool set.
-  With a 13-tool subset, 33 of the cases are solvable; Qwen2.5-3B-Instruct
-  Q4_0 on the CPU with unconstrained decoding solved 3 of them (9.1%). The
+  scores runs against a set of speaker-control requests. The
   loop reaches the model through one small trait, so any engine that completes
   text can drive it. A wasm package runs the agent in a Web Worker.
 ---
