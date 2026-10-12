@@ -2,11 +2,12 @@
 layout: default
 title: Collection
 permalink: /collection/
+wide: true
 ---
 
 # Collection
 
-<p class="tagline">Every model, dataset, and repo that came out of the lab, in one list.</p>
+<p class="tagline">Every model, dataset, and repo that came out of the lab.</p>
 
 {% include collection-full.html %}
 

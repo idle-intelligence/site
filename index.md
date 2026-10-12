@@ -11,6 +11,8 @@ wide: true
 
 <p class="lead">{{ site.description }}</p>
 
-<h2 class="section-label">Collection</h2>
+<h2 class="section-label">Projects</h2>
 
 {% include catalogue.html %}
+
+Click a card to know more about a project, or explore the [collection]({{ '/collection/' | relative_url }}) of all the Code, Models, Datasets for more details.

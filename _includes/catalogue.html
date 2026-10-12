@@ -1,14 +1,3 @@
-{% assign n_models = 0 %}
-{% assign n_datasets = 0 %}
-{% assign n_repos = 0 %}
-{% for item in site.collection %}
-  {% if item.kind == "model" %}{% assign n_models = n_models | plus: 1 %}{% endif %}
-  {% if item.kind == "dataset" %}{% assign n_datasets = n_datasets | plus: 1 %}{% endif %}
-  {% if item.kind == "code" %}{% assign n_repos = n_repos | plus: 1 %}{% endif %}
-{% endfor %}
-
-<p class="counts">{{ n_repos }} projects &middot; {{ n_models }} models &middot; {{ n_datasets }} datasets</p>
-
 <div class="catalogue-grid">
 {% for g in site.data.task_groups %}
   {% assign projects = site.collection | where: "task_group", g | where: "kind", "code" %}
