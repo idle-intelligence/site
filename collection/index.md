@@ -2,6 +2,7 @@
 layout: default
 title: Collection
 permalink: /collection/
+wide: true
 ---
 
 # Collection
