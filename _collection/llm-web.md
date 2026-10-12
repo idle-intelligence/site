@@ -2,7 +2,7 @@
 layout: card
 title: llm-web
 kind: code
-task_group: LLM inference
+task_group: LLM and tool calling
 repo: idle-intelligence/llm-web
 hf: ""
 demo: ""
