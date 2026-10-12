@@ -29,7 +29,7 @@ blurb: >-
 
 {{ page.blurb }}
 
-Measured in a browser tab at 16x16 on an M2:
+Measured in a browser tab at 16x16 on an M2, one generation per row:
 
 | method | s / generation | parameters | cells correct |
 |---|---|---|---|
@@ -38,5 +38,15 @@ Measured in a browser tab at 16x16 on an M2:
 | LLM per cell (trained) | 28.46 | 0.5B (+ adapter) | 256 / 256 |
 | LLM whole grid (trained) | 0.6364 | 0.5B (+ adapter) | 256 / 256 |
 | BERT of Life (batched) | 0.0195 | 3,490 | 256 / 256 |
-| 9 numbers to centre (batched) | 0.0253 | 1,442 | 256 / 256 |
-| stencil (grid to grid) | 0.0928 | 3,329 | 256 / 256 |
+
+At 2048x2048 the language models are left out and the grid goes to the graphics processor. Measured in a Chromium browser tab on an Apple M2 with WebGPU, 200 generations per row from the same starting board, each final board checked cell by cell against the rule. Read back means the board returns to the CPU after every generation, kept there means it stays on the GPU, and bitwise packs 32 cells into each word:
+
+| method | s / generation | cells / s | cells correct |
+|---|---|---|---|
+| rule, CPU | 0.0780 | 5.4e7 | all 4,194,304 |
+| lookup table, CPU | 0.0380 | 1.1e8 | all 4,194,304 |
+| lookup table, GPU, read back | 0.0917 | 4.6e7 | all 4,194,304 |
+| lookup table, GPU, kept there | 0.0016 | 2.7e9 | all 4,194,304 |
+| bitwise, GPU | 8.37e-5 | 5.0e10 | all 4,194,304 |
+
+The graphics processor wins once the grid stays on it: the lookup table kept on the GPU is about 49 times faster than the CPU rule, and the bitwise kernel about 930 times. Reading the board back after every generation costs more than the computation saves, and that row is slower than the CPU lookup table.
