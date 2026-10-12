@@ -17,8 +17,7 @@ model_size: 3B params (Q4_0 GGUF)
 license: "model licence Apache-2.0; code licence MIT"
 status: experiment
 blurb: >-
-  A tool-calling agent loop for Qwen2.5-Instruct models, running on the lean
-  inference engine. lean runs the model, text in and text out, on a backend it
+  lean runs the model, text in and text out, on a backend it
   picks by capability. This repository holds what an agent adds on top: it
   renders each step's prompt with the model's own chat template and the tools,
   parses the model's tool calls out of its raw output, regenerates when a reply
