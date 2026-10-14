@@ -23,7 +23,9 @@ blurb: >-
   picture of the model's own character. The same repo trains three from-scratch
   alternatives on the same task: a 3,490-parameter BERT-style classifier, a
   1,442-parameter MLP, and a 3,329-parameter stencil-attention model that solves
-  the whole grid in one pass, collected in stencil-life. A
+  the whole grid in one pass, collected in stencil-life. The three small models
+  also have a Rust and WGSL forward pass, on the CPU or WebGPU, in
+  [jacobi2000](https://github.com/ilnmtlbnm/jacobi2000). A
   [compare page](https://idle-intelligence.github.io/llm-life/web/compare/)
   runs every method on the same grid, in one tab; on large grids the
   graphics processor pulls ahead of the CPU.
