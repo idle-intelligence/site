@@ -7,8 +7,6 @@
   {% if item.kind == "code" %}{% assign n_repos = n_repos | plus: 1 %}{% endif %}
 {% endfor %}
 
-<p class="counts">{{ n_repos }} projects &middot; {{ n_models }} models &middot; {{ n_datasets }} datasets</p>
-
 {% assign kinds = "code,model,dataset" | split: "," %}
 {% assign kind_labels = "Code,Models,Datasets" | split: "," %}
 {% for kind in kinds %}

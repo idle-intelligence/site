@@ -5,12 +5,12 @@ kind: code
 task_group: Cellular automata
 repo: idle-intelligence/llm-life
 hf: idle-intelligence/llm-of-life-lora
-demo: ""
+demo: "https://trucs.ai/llm-life/"
 demo_pages: "https://idle-intelligence.github.io/llm-life/web/"
 original_model: Qwen/Qwen2.5-0.5B-Instruct
 dataset: ""
 perf_highlight: 8.48 s/generation (LLM per cell, trained, batched, on lean), 256/256 cells correct, 16x16 grid, browser tab, Apple M2
-card_proof: "256/256 cells, 7 methods compared"
+card_proof: "16384²: GPU ~790× the CPU"
 what_is: Uses a small language model's logits as the update rule for Conway's Game of Life.
 runs: browser, WASM, WebGPU, native
 model_size: 0.5B params, Q4_0
@@ -23,8 +23,18 @@ blurb: >-
   picture of the model's own character. The same repo trains three from-scratch
   alternatives on the same task: a 3,490-parameter BERT-style classifier, a
   1,442-parameter MLP, and a 3,329-parameter stencil-attention model that solves
-  the whole grid in one pass, collected in stencil-life. A compare page runs
-  every method on the same grid, one tab.
+  the whole grid in one pass, collected in stencil-life. It also trains
+  networks with weights restricted to -1, 0 or +1, exact on all 512 possible
+  neighborhoods down to 45 parameters, and a compiler turns a trained network
+  like this into logic operations: one 89-parameter network becomes 92 logic
+  operations, still exact. A larger network predicts two generations at once and
+  is exact on all 33.5 million possible 5x5 blocks. The compiler is a separate,
+  unreleased project. The three small models
+  also have a Rust and WGSL forward pass, on the CPU or WebGPU, in
+  [jacobi2000](https://github.com/ilnmtlbnm/jacobi2000). A
+  [compare page](https://idle-intelligence.github.io/llm-life/web/compare/)
+  runs every method on the same grid, in one tab; on large grids the
+  graphics processor pulls ahead of the CPU.
 ---
 
 {{ page.blurb }}
@@ -39,14 +49,14 @@ Measured in a browser tab at 16x16 on an M2, one generation per row:
 | LLM whole grid (trained) | 0.4971 | 0.5B (+ adapter) | 256 / 256 |
 | BERT of Life (batched) | 0.0173 | 3,490 | 256 / 256 |
 
-At 2048x2048 the language models are left out and the grid goes to the graphics processor. Measured in a Chromium browser tab on an Apple M2 with WebGPU, 200 generations per row from the same starting board, each final board checked cell by cell against the rule. Read back means the board returns to the CPU after every generation, kept there means it stays on the GPU, and bitwise packs 32 cells into each word:
+At 2048x2048 the language models are left out and the grid goes to the graphics processor. Measured in a Chromium browser tab on an Apple M2 with WebGPU, 200 generations per row from the same starting board, each final board checked cell by cell against the rule. The two rows kept on the GPU stop the timer when the last generation has finished, before the board is read back. Read back means the board returns to the CPU after every generation, kept there means it stays on the GPU, and bitwise packs 32 cells into each word:
 
 | method | s / generation | cells / s | cells correct |
 |---|---|---|---|
 | rule, CPU | 0.0780 | 5.4e7 | all 4,194,304 |
 | lookup table, CPU | 0.0380 | 1.1e8 | all 4,194,304 |
 | lookup table, GPU, read back | 0.0917 | 4.6e7 | all 4,194,304 |
-| lookup table, GPU, kept there | 0.0016 | 2.7e9 | all 4,194,304 |
-| bitwise, GPU | 8.37e-5 | 5.0e10 | all 4,194,304 |
+| lookup table, GPU, kept there | 0.00113 | 3.7e9 | all 4,194,304 |
+| bitwise, GPU | 6.08e-5 | 6.9e10 | all 4,194,304 |
 
-The graphics processor wins once the grid stays on it: the lookup table kept on the GPU is about 49 times faster than the CPU rule, and the bitwise kernel about 930 times. Reading the board back after every generation costs more than the computation saves, and that row is slower than the CPU lookup table.
+The graphics processor wins once the grid stays on it: the lookup table kept on the GPU is about 68 times faster than the CPU rule, and the bitwise kernel about 1,280 times. Reading the board back after every generation costs more than the computation saves, and that row is slower than the CPU lookup table.
