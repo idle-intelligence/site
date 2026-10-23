@@ -25,7 +25,7 @@ blurb: >-
   exposes without a permission prompt, plus a std-only Rust dev server to
   capture readings from a phone. Finding: on Android, motion sensors, compass,
   and much of the device fingerprint are freely available with zero user
-  consent; iOS gates everything.
+  consent; iOS gates motion and orientation events behind a permission.
 ---
 
 {{ page.blurb }}
