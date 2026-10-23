@@ -40,7 +40,7 @@ layout: default
   {% endif %}
   {% if page.demo_pages and page.demo_pages != "" %}<dt>Demo (GitHub Pages)</dt><dd><a href="{{ page.demo_pages }}">{{ page.demo_pages }}</a></dd>{% endif %}
   {% if page.kind == "code" and page.demo and page.demo != "" %}<dt>Demo</dt><dd><a href="{{ page.demo }}">{{ page.demo }}</a></dd>{% endif %}
-  {% if page.repo and page.repo != "" %}<dt>Source</dt><dd><a href="https://github.com/{{ page.repo }}">{{ page.repo }}</a></dd>{% endif %}
+  {% if page.repo and page.repo != "" %}<dt>Source</dt><dd><a href="https://github.com/{{ page.repo }}">{{ page.repo }}</a>{% for r in page.more_repos %}<br><a href="https://github.com/{{ r }}">{{ r }}</a>{% endfor %}</dd>{% endif %}
   {% if page.hf and page.hf != "" %}<dt>HuggingFace</dt><dd><a href="https://huggingface.co/{{ page.hf }}">{{ page.hf }}</a></dd>{% endif %}
   {% if page.dataset and page.dataset != "" %}<dt>Dataset</dt><dd><a href="https://huggingface.co/datasets/{{ page.dataset }}">{{ page.dataset }}</a></dd>{% endif %}
   {% if page.perf_highlight and page.perf_highlight != "" %}<dt>Perf</dt><dd>{{ page.perf_highlight }}</dd>{% endif %}

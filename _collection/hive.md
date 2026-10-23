@@ -4,6 +4,8 @@ title: Hive
 kind: code
 task_group: Distributed inference
 repo: idle-intelligence/hive-server
+more_repos:
+  - idle-intelligence/hive-client
 hf: ""
 demo: "https://trucs.ai/swarm/"
 demo_pages: ""
