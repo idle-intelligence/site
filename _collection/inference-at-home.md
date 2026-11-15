@@ -16,15 +16,18 @@ contribution: Trained by Idle Intelligence.
 base_note: bert-mini architecture, base checkpoint not recorded
 dataset: ""
 perf_highlight: ""
-what_is: The trained weights behind hive-ml-classifier's swarm-intent BERT.
+what_is: The Hive's two message classifiers, a 64-cell topic grid and the first 4-class intent model, ready to run in the browser.
 runs: browser, WASM
 model_size: 11M params, 43MB
-license: ""
+license: Apache-2.0
 status: maintained
 blurb: >-
-  Fine-tuned bert-mini weights (safetensors, config.json, tokenizer) for the
-  4-class swarm-intent classifier used by hive-ml-classifier: swarm, weather,
-  time, other. v3 hits 94.4% accuracy and 94.3% weighted F1 on held-out data.
+  Two classifiers, each with its weights, config.json and tokenizer.
+  swarm-8x8, the one the Hive uses now, puts a message in one of 64 topic cells
+  (8 domains of 8 subjects) so answers can be filed and retrieved per cell: a
+  bge-small-en-v1.5 fine-tune with int8 weights. intent, the first Hive
+  classifier, is a bert-mini fine-tune with four labels (swarm, weather, time,
+  other), still used by the classifier demo on trucs.ai.
 ---
 
 {{ page.blurb }}
