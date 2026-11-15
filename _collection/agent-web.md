@@ -11,7 +11,7 @@ original_model: Qwen/Qwen2.5-3B-Instruct
 dataset: ""
 perf_highlight: ""
 card_proof: ""
-what_is: A tool-calling agent loop for Qwen2.5-Instruct models, running on the lean inference engine.
+what_is: A tool-calling agent loop for Qwen2.5 and Qwen3 instruct models, running on the lean inference engine.
 runs: browser, WASM, WebGPU, native
 model_size: 3B params (Q4_0 GGUF)
 license: "model licence Apache-2.0; code licence MIT"
