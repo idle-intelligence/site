@@ -13,12 +13,12 @@ used_on:
 original_model: ""
 original_author: ""
 contribution: Trained by Idle Intelligence.
-base_note: bert-mini architecture, base checkpoint not recorded
+base_note: "swarm-8x8: BAAI/bge-small-en-v1.5; intent: prajjwal1/bert-mini"
 dataset: ""
 perf_highlight: ""
 what_is: The Hive's two message classifiers, a 64-cell topic grid and the first 4-class intent model, ready to run in the browser.
 runs: browser, WASM
-model_size: 11M params, 43MB
+model_size: "swarm-8x8 33M params, 34MB (int8); intent 11M params, 43MB"
 license: Apache-2.0
 status: maintained
 blurb: >-
