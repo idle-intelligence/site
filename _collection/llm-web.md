@@ -27,8 +27,9 @@ blurb: >-
   lean is an LLM inference engine written in Rust with WGSL compute kernels on
   wgpu, one codebase that runs natively and compiled to WebAssembly. In the
   browser it picks WebGPU, CPU threads or a single CPU thread depending on what
-  the device supports. It loads GGUF weights (Q4_0, Q4_1, Q8_0, Q6_K) for Qwen2,
-  Qwen3 and Llama-architecture models, applies LoRA adapters at runtime, and its
+  the device supports. It loads GGUF weights (Q4_0, Q4_1, Q5_0, Q8_0, Q4_K, Q6_K,
+  plus F16 and BF16) for Qwen2, Qwen3 and Llama-architecture models (tested on
+  Qwen2.5, Qwen3, SmolLM2 and Llama 3.2 models up to 3B), applies LoRA adapters at runtime, and its
   output matches Hugging Face transformers token for token. It is the engine
   behind the trucs.ai chat and voice demos and llm-life's language-model
   methods. The public demo runs SmolLM2-360M-Instruct.

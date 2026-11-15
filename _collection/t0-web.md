@@ -21,10 +21,11 @@ license: "model licence Apache-2.0; code licence MIT"
 status: maintained
 blurb: >-
   Own WGSL implementation of The Forecasting Company's t0 time-series
-  forecasters, ported to Burn and wgpu for native and browser use. Weights
+  forecasters, on raw wgpu with hand-written kernels for the GPU and a Burn CPU
+  engine as the fallback, natively and in the browser. Weights
   quantize to GGUF Q8_0 and Q4_0 (t0-alpha-q4_0-webgpu, t0-alpha-q8_0-webgpu,
   t0-beta-q4_0-webgpu, t0-beta-q8_0-webgpu), match the PyTorch reference to
-  within 1.2e-6, and run in Chrome via WebGPU. A compare page runs this engine
+  within 1.6e-6 (t0-alpha) and 3.2e-6 (t0-beta), and run in Chrome via WebGPU. A compare page runs this engine
   next to the official ONNX INT8 export side by side in one tab.
 ---
 
